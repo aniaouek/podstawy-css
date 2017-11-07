@@ -1,0 +1,91 @@
+/*selektor universalny, lapie wszystkie elementy na stronie*/
+*{
+	font-size: 22px;
+}
+body {
+	margin: 0;
+}
+
+/*selektor znacznika lapie wszystkie okreslone znaczniki na stronie*/
+p{
+	font-size: 16px;
+}
+
+/*selektor identyfikatora lapie element o okreslonym atrybucie id*/
+#universal{
+	background-color: grey;
+}
+/*selektor klasy lapie elementy o okreslonym atrybucie class*/
+.class-selektor {
+	background-color:beige;
+}
+
+/*mozemy laczyc selektor identyfikatora z selektorem klasy*/
+
+#universal.blue {
+	background-color:blue;
+}
+
+/*selektor bezposredniego potomka (ze znakiem >)lapie elementy zagniezdzone BEZPOSREDNIO w elemencie*/
+.potomek > p {
+	font-size: 30px;
+	text-align: center;
+}
+
+/*selektor potomka (ze spacja) lapie wszystkie zagniezdzone elementy*/
+.potomek p{
+	font-size: 20px;
+}
+
+/*selektor bezposredniego rodzenstwa (znak+) lapie pierwsze wystapienie selektora na tym samym pozimie zagniezdzenia*/
+.bezposrednie-rodzenstwo h2 + p {
+	color: violet;
+}
+
+/*selektor rodzenstwa (znak~) zlapie wszystkie wystapienia selektora na tym samym poziomie zagniezdzenia*/
+
+.bezposrednie-rodzenstwo h2 ~ p {
+	color: red;
+}
+
+/*pozycjonowanie elementow*/
+
+#pozycjonowanie{
+	height: 400px;
+	background-color: green;
+	position: relative;
+}
+/*pozycja relatywana zachwuje miejsce elementu odsuwa element od elementu nadrzednego*/
+
+/* element pozycjonowany absolutnie usawia sie wzgledem elementu nadrzednego ktory jest pozycjonowany relatywnie. Jeeli element nadrzedny nie jest pozycjonowany relatywnie to zawsze bedzie ustawial sie absolutnie wzgledem body. dodatrkowo element pozycjonowany absolutnie nie zachowyje miejsca
+*/
+
+/*jezeli zmieniamy elementowi blokowemu wlasciwosc position na absolutne lub zafixowane to musimy pamietac o tym aby taki blok rozciagnac ponownie na 100% szerokosci*/
+
+#pozycjonowanie .red {
+	background-color: red;
+	position: absolute;
+	top: 20px;
+	left: 30px;
+}
+
+#pozycjonowanie .blue{
+	background-color: blue;
+}
+
+#pozycjonowanie .inner p {
+	margin: 0;
+	color: white;
+}
+/* jezeli ustawimy pozycje fixed to ustawimy element wgledem okna przegladarki dodatkowo naalezy pamietac aby ustawic top 0 i left 0 (przykleic go do gornego i lewego okna przegladarki) i rozciagnac element na 100% przegladarki*/
+#main-nav {
+	background-color: aquamarine;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1;
+}
+#main-nav ul {
+	margin: 0;
+}
